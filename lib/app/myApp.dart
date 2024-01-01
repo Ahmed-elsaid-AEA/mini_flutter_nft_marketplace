@@ -6,7 +6,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp(theme: ThemeData.dark(),
       routes:RouteManagers.routes ,
       initialRoute: RouteName.kOnBoardingPage,
     );
