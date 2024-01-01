@@ -1,3 +1,4 @@
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/asset_mage_manager.dart';
@@ -10,7 +11,7 @@ class OnBoardingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
           child: Stack(
         children: [
@@ -18,10 +19,7 @@ class OnBoardingPage extends StatelessWidget {
               width: double.infinity,
               height: double.infinity,
               fit: BoxFit.cover,
-              image: AssetImage(
-                  AssetImageManager.onBoardingBackgroundImage
-
-              )),
+              image: AssetImage(AssetImageManager.onBoardingBackgroundImage)),
           SizedBox(
             width: double.infinity,
             child: Column(
@@ -29,7 +27,7 @@ class OnBoardingPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: 50,
+                  height: 70,
                 ),
                 Text(
                   StringsManager.titleOnBoardingPage,
@@ -41,14 +39,21 @@ class OnBoardingPage extends StatelessWidget {
                       fontWeight: FontWeight.bold),
                 ),
                 Spacer(),
-                Text(
-                  StringsManager.titleOnBoardingPage,
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                      fontFamily: FontMangers.sfRroDisplay,
-                      color: ColorManager.kColorWhite,
-                      fontSize: FontSize.f36_04,
-                      fontWeight: FontWeight.bold),
+                ClipRRect(
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(
+                        sigmaX: 10,sigmaY: 10
+                    ),
+                    child: Container(
+                      height: 191,
+                      width: 306,
+                      color: ColorManager.kColorWhite.withOpacity(0.1),
+                    ),
+                  ),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                SizedBox(
+                  height: 70,
                 ),
               ],
             ),
