@@ -14,7 +14,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: ListView(
         children: [
           SizedBox(
               height: HeightValue.h167_57,
@@ -32,24 +32,7 @@ class HomeScreen extends StatelessWidget {
             height: HeightValue.h27,
           ),
           const CustomSubTitle(title: StringsManager.trendingCollectionHomePage)
-       ,const SizedBox(height: 7,),
-          SizedBox(
-              height: HeightValue.h167_57,
-              child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => CustomCategoryHomePage(
-                    title: Constants.categoryList[index].title,
-                    image: Constants.categoryList[index].image,
-                  ),
-                  separatorBuilder: (context, index) => SizedBox(
-                    width: WidthValue.w9,
-                  ),
-                  itemCount: 3)),
-          SizedBox(
-            height: HeightValue.h27,
-          ),
-          const CustomSubTitle(title: StringsManager.trendingCollectionHomePage)
-          ,],
+     ,],
       ),
       appBar: AppBar(
         centerTitle: true,
