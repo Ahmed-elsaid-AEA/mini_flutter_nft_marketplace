@@ -3,6 +3,8 @@ class FontMangers{
 }
 class FontSize{
 
+  static const double f17= 17;
+  static const double f18= 18;
   static const double f19_82= 19.82;
 
   static const double f25_23=  25.23;

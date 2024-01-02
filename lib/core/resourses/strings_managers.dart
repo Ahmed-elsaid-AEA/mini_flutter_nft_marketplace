@@ -5,4 +5,5 @@ NFT Marketplace''';
   static const String descCardOnBoardingPage="You can buy and sell the NFTs of the best artists in the world";
   static const String btnTitleCardOnBoardingPage="Get started now";
   static const String titleHomePage="NFT Marketplace";
+  static const String trendingCollectionHomePage="Trending collections";
 }
