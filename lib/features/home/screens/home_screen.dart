@@ -1,8 +1,11 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/asset_mage_manager.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/color_manager.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/constants.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/font_managers.dart';
+import 'package:mini_flutter_nft_marketplace/core/resourses/route_managers.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/size_manager.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/strings_managers.dart';
 import 'package:mini_flutter_nft_marketplace/features/home/widgets/custom_category_home_page.dart';
@@ -28,11 +31,32 @@ class HomeScreen extends StatelessWidget {
                         width: WidthValue.w9,
                       ),
                   itemCount: 3)),
-          SizedBox(
+          const SizedBox(
             height: HeightValue.h27,
           ),
-          const CustomSubTitle(title: StringsManager.trendingCollectionHomePage)
-     ,],
+          const CustomSubTitle(
+              title: StringsManager.trendingCollectionHomePage),
+          UnconstrainedBox(
+            alignment: Alignment.centerLeft,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: BackdropFilter(
+                filter: ImageFilter.blur(
+                    sigmaX: BlurValue.b10, sigmaY: BlurValue.b10),
+                child: Container(
+                  alignment: Alignment.center,
+                  padding: const EdgeInsets.all(PaddingValue.p25),
+                  height: HeightValue.h191,
+                  width: WidthValue.w157,
+                  color: ColorManager.kColorWhite.withOpacity(0.1),
+                  child: Column(
+                    children: [],
+                  ),
+                ),
+              ),
+            ),
+          )
+        ],
       ),
       appBar: AppBar(
         centerTitle: true,
