@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mini_flutter_nft_marketplace/core/resourses/asset_mage_manager.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/color_manager.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/font_managers.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/strings_managers.dart';
@@ -10,6 +11,11 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: Column(
+        children: [
+Image(image: AssetImage(AssetImageManager.catHomePage1))
+        ],
+      ),
       appBar: AppBar(
         centerTitle: true,
         title: Text(StringsManager.titleHomePage),
