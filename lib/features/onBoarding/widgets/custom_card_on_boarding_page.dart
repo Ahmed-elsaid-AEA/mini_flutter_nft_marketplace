@@ -20,7 +20,7 @@ class CustomCardOnBoardingPage extends StatelessWidget {
           alignment: Alignment.center,
           padding: const EdgeInsets.all(PaddingValue.p25),
           height: HeightValue.h191,
-          width: WeightValue.w306,
+          width: WidthValue.w306,
           color: ColorManager.kColorWhite.withOpacity(0.1),
           child: Column(
             children: [
@@ -45,7 +45,7 @@ class CustomCardOnBoardingPage extends StatelessWidget {
                 height: HeightValue.h10,
               ),
               Container(
-                width: WeightValue.w198_2,
+                width: WidthValue.w198_2,
                 decoration: BoxDecoration(
                     // color: Color(0xff97A9F6),
                     gradient: const LinearGradient(

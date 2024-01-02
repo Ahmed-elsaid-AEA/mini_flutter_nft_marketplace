@@ -18,7 +18,7 @@ class CustomCategoryHomePage extends StatelessWidget {
           child:   Image(
             image: AssetImage(image),
             height: HeightValue.h167_57,
-            width: WeightValue.w252_26,
+            width: WidthValue.w252_26,
           ),
         ),
         Positioned(bottom: PositionedValue.po,child: ClipRRect(
@@ -39,7 +39,7 @@ class CustomCategoryHomePage extends StatelessWidget {
                           ColorManager.kColorBlack.withOpacity(.45),
                         ])),
                 height: HeightValue.h45_06,
-                width: WeightValue.w252_26,
+                width: WidthValue.w252_26,
                 child: Text(title,style: const TextStyle(fontSize: FontSize.f19_82,fontFamily: FontMangers.sfRroDisplay,fontWeight: FontWeight.bold),)),
           ),
         ),)

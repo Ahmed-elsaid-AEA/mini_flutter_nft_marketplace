@@ -7,8 +7,9 @@ class HeightValue {
   static const double h191 = 191;
 }
 
-class WeightValue {
+class WidthValue {
   static const double w6 = 6;
+  static const double w9 = 9;
   static const double w10 = 10;
   static const double w70 = 70;
   static const double w198_2 = 198.2;

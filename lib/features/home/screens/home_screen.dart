@@ -1,13 +1,10 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/asset_mage_manager.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/color_manager.dart';
-import 'package:mini_flutter_nft_marketplace/core/resourses/font_managers.dart';
+import 'package:mini_flutter_nft_marketplace/core/resourses/constants.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/size_manager.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/strings_managers.dart';
 import 'package:mini_flutter_nft_marketplace/features/home/widgets/custom_category_home_page.dart';
-import 'package:mini_flutter_nft_marketplace/features/home/widgets/custom_title_home_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -17,16 +14,17 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Container(
-            height: 300,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: [
-                CustomCategoryHomePage(title: 'Art', image: AssetImageManager.catHomePage1),
-                CustomCategoryHomePage(title: 'Art', image: AssetImageManager.catHomePage1),
-              ],
-            ),
-          )
+          SizedBox(
+              height: HeightValue.h167_57,
+              child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => CustomCategoryHomePage(
+                      title: Constants.categoryList[index].title,
+                    image: Constants.categoryList[index].image,),
+                  separatorBuilder: (context, index) => SizedBox(
+                        width: WidthValue.w9,
+                      ),
+                  itemCount: 3))
         ],
       ),
       appBar: AppBar(
