@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/asset_mage_manager.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/color_manager.dart';
@@ -36,21 +37,42 @@ class HomeScreen extends StatelessWidget {
           ),
           const CustomSubTitle(
               title: StringsManager.trendingCollectionHomePage),
+          const SizedBox(
+            height: 10,
+          ),
           UnconstrainedBox(
             alignment: Alignment.centerLeft,
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(19),
               child: BackdropFilter(
                 filter: ImageFilter.blur(
-                    sigmaX: BlurValue.b10, sigmaY: BlurValue.b10),
+                    sigmaX: BlurValue.b100, sigmaY: BlurValue.b100),
                 child: Container(
                   alignment: Alignment.center,
-                  padding: const EdgeInsets.all(PaddingValue.p25),
-                  height: HeightValue.h191,
+                  padding: const EdgeInsets.all(9),
+                  height: 194,
                   width: WidthValue.w157,
                   color: ColorManager.kColorWhite.withOpacity(0.1),
                   child: Column(
-                    children: [],
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(19),
+                        child: Image(
+                            width: 139,
+                            height: 139,
+                            fit: BoxFit.cover,
+                            image: AssetImage(AssetImageManager.trendingHomePage1)),
+                      ),
+                      SizedBox(height: 9,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("3D Art",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
+                          Icon(CupertinoIcons.heart_fill,color: Colors.red,)
+                        ],
+                      )
+                    ],
                   ),
                 ),
               ),
