@@ -62,7 +62,7 @@ class CustomCardOnBoardingPage extends StatelessWidget {
                         ImageFilter.blur(sigmaX: BlurValue.b100, sigmaY: 30),
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, RouteName.kHomePage);
+                        Navigator.pushReplacementNamed(context, RouteName.kHomePage);
                       },
                       child:
                           const Text(StringsManager.btnTitleCardOnBoardingPage),

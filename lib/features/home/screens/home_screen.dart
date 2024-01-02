@@ -10,18 +10,12 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-          child: Container(
-        width: double.infinity,
-        child: Column(
-          children: [
-            SizedBox(height: 12.61),
-            CustomTitleHomePage(),
-
-          ],
-        ),
-      )),
-      backgroundColor: ColorManager.kColorPrimary,
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(StringsManager.titleHomePage),
+        backgroundColor: Colors.transparent,
+      ),
+        backgroundColor: ColorManager.kColorPrimary,
     );
   }
 }
