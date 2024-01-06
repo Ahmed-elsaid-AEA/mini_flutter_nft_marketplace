@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mini_flutter_nft_marketplace/core/resourses/asset_mage_manager.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/color_manager.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/constants.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/size_manager.dart';
@@ -6,6 +7,7 @@ import 'package:mini_flutter_nft_marketplace/core/resourses/strings_managers.dar
 import 'package:mini_flutter_nft_marketplace/features/home/widgets/custom_card__collection.dart';
 import 'package:mini_flutter_nft_marketplace/features/home/widgets/custom_category_home_page.dart';
 import 'package:mini_flutter_nft_marketplace/features/home/widgets/custom_sub_title.dart';
+import 'package:mini_flutter_nft_marketplace/models/collections_model.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -21,13 +23,11 @@ class HomeScreen extends StatelessWidget {
                 height: HeightValue.h167_57,
                 child: ListView.separated(
                     scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) =>
-                        CustomCategoryHomePage(
+                    itemBuilder: (context, index) => CustomCategoryHomePage(
                           title: Constants.categoryList[index].title,
                           image: Constants.categoryList[index].image,
                         ),
-                    separatorBuilder: (context, index) =>
-                        SizedBox(
+                    separatorBuilder: (context, index) => SizedBox(
                           width: WidthValue.w9,
                         ),
                     itemCount: 3)),
@@ -40,15 +40,21 @@ class HomeScreen extends StatelessWidget {
               height: 10,
             ),
             SizedBox(
-
-             height: 194,
+              height: 194,
               child: ListView.separated(
-                scrollDirection: Axis.horizontal,
-                  itemBuilder:(context, index) =>  custom_card_Collection(),
-                  separatorBuilder: (context, index) => SizedBox(width: WidthValue.w28_83,),
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => custom_card_Collection(
+                        collctionsModel: CollectionsModel(
+                            AssetImageManager.catHomePage1,
+                            "title",
+                            false,
+                            100),
+                      ),
+                  separatorBuilder: (context, index) => SizedBox(
+                        width: WidthValue.w28_83,
+                      ),
                   itemCount: 3),
             )
-
           ],
         ),
       ),

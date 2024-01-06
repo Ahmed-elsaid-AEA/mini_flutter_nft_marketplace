@@ -8,6 +8,7 @@ class HeightValue {
   static const double h139 = 139;
   static const double h167_57 = 167.57;
   static const double h191 = 191;
+  static const double h194 = 194;
 }
 
 class WidthValue {
@@ -30,6 +31,7 @@ class BlurValue {
 
 class PaddingValue {
   static const double p1= 1;
+  static const double p9 = 9;
   static const double p10 = 10;
   static const double p14 = 14;
   static const double p100 = 100;
