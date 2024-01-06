@@ -1,7 +1,11 @@
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/asset_mage_manager.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/color_manager.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/constants.dart';
+import 'package:mini_flutter_nft_marketplace/core/resourses/font_managers.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/size_manager.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/strings_managers.dart';
 import 'package:mini_flutter_nft_marketplace/features/home/widgets/custom_card__collection.dart';
@@ -44,12 +48,86 @@ class HomeScreen extends StatelessWidget {
               child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) => custom_card_Collection(
-                        collctionsModel:Constants.collectionList[index],
+                        collctionsModel: Constants.collectionList[index],
                       ),
-                  separatorBuilder: (context, index) => SizedBox(
+                  separatorBuilder: (context, index) => const SizedBox(
                         width: WidthValue.w28_83,
                       ),
-                  itemCount: 3),
+                  itemCount: Constants.collectionList.length),
+            ),
+            const SizedBox(
+              height: HeightValue.h27,
+            ),
+            const CustomSubTitle(title: StringsManager.topSeller),
+            SizedBox(
+              height: 7,
+            ),
+            UnconstrainedBox(
+              alignment: Alignment.centerLeft,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(19),
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(
+                      sigmaX: BlurValue.b100, sigmaY: BlurValue.b100),
+                  child: Container(
+                    alignment: Alignment.center,
+                    padding: const EdgeInsets.all(PaddingValue.p9),
+                    height: HeightValue.h236,
+                    width: WidthValue.w157,
+                    color: ColorManager.kColorWhite.withOpacity(0.1),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Image(
+                          image: AssetImage(AssetImageManager.topSeller1),
+                          height: HeightValue.h139,
+                        ),
+                        SizedBox(
+                          height: 9,
+                        ),
+                        Text(
+                          "Abstract Pink",
+                          style: TextStyle(
+                              color: ColorManager.kColorWhite,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: FontMangers.sfRroDisplay,
+                              fontSize: 11),
+                        ),
+
+                        Text(
+                          "abstract #2538",
+                          style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: FontMangers.sfRroDisplay,
+                              fontSize: 10),
+                        ),
+                        SizedBox(
+                          height: 9,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(Icons.hearing_sharp, color: Colors.grey),
+                                Text('0.906')
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Icon(CupertinoIcons.heart, color: Colors.grey),
+                                Text('200')
+                              ],
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
             )
           ],
         ),

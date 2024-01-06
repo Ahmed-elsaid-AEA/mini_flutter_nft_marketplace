@@ -9,6 +9,7 @@ class HeightValue {
   static const double h167_57 = 167.57;
   static const double h191 = 191;
   static const double h194 = 194;
+  static const double h236 = 236;
 }
 
 class WidthValue {
