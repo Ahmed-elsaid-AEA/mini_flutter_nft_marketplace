@@ -1,19 +1,13 @@
-import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mini_flutter_nft_marketplace/core/resourses/asset_mage_manager.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/color_manager.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/constants.dart';
-import 'package:mini_flutter_nft_marketplace/core/resourses/font_managers.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/size_manager.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/strings_managers.dart';
 import 'package:mini_flutter_nft_marketplace/features/home/widgets/custom_card__collection.dart';
 import 'package:mini_flutter_nft_marketplace/features/home/widgets/custom_card_top_seller.dart';
 import 'package:mini_flutter_nft_marketplace/features/home/widgets/custom_category_home_page.dart';
 import 'package:mini_flutter_nft_marketplace/features/home/widgets/custom_sub_title.dart';
-import 'package:mini_flutter_nft_marketplace/models/collections_model.dart';
-import 'package:mini_flutter_nft_marketplace/models/top_seller_model.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -33,7 +27,7 @@ class HomeScreen extends StatelessWidget {
                           title: Constants.categoryList[index].title,
                           image: Constants.categoryList[index].image,
                         ),
-                    separatorBuilder: (context, index) => SizedBox(
+                    separatorBuilder: (context, index) => const SizedBox(
                           width: WidthValue.w9,
                         ),
                     itemCount: 3)),
@@ -61,20 +55,18 @@ class HomeScreen extends StatelessWidget {
               height: HeightValue.h27,
             ),
             const CustomSubTitle(title: StringsManager.topSeller),
-            SizedBox(
+            const SizedBox(
               height: 7,
             ),
-
             SizedBox(
               height: HeightValue.h236,
               child: ListView.separated(
                   scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) =>  CustomCardTopSeller(
-                      topSellerModel: TopSellerModel(AssetImageManager.topSeller1,
-                          "title", "subTitle", true, 100, 200)),
+                  itemBuilder: (context, index) => CustomCardTopSeller(
+                      topSellerModel: Constants.topSellerList[index]),
                   separatorBuilder: (context, index) => const SizedBox(
-                    width: WidthValue.w28_83,
-                  ),
+                        width: WidthValue.w28_83,
+                      ),
                   itemCount: Constants.collectionList.length),
             ),
           ],
@@ -82,7 +74,7 @@ class HomeScreen extends StatelessWidget {
       ),
       appBar: AppBar(
         centerTitle: true,
-        title: Text(StringsManager.titleHomePage),
+        title: const Text(StringsManager.titleHomePage),
         backgroundColor: Colors.transparent,
       ),
       backgroundColor: ColorManager.kColorPrimary,
