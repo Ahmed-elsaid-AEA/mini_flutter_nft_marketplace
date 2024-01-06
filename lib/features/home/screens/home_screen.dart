@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
               height: 10,
             ),
             SizedBox(
-              height: 194,
+              height: HeightValue.h194,
               child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) => custom_card_Collection(
@@ -64,9 +64,19 @@ class HomeScreen extends StatelessWidget {
             SizedBox(
               height: 7,
             ),
-            CustomCardTopSeller(
-                topSellerModel: TopSellerModel(AssetImageManager.topSeller1,
-                    "title", "subTitle", true, 100, 200))
+
+            SizedBox(
+              height: HeightValue.h236,
+              child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) =>  CustomCardTopSeller(
+                      topSellerModel: TopSellerModel(AssetImageManager.topSeller1,
+                          "title", "subTitle", true, 100, 200)),
+                  separatorBuilder: (context, index) => const SizedBox(
+                    width: WidthValue.w28_83,
+                  ),
+                  itemCount: Constants.collectionList.length),
+            ),
           ],
         ),
       ),
