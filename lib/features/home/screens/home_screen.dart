@@ -21,11 +21,13 @@ class HomeScreen extends StatelessWidget {
                 height: HeightValue.h167_57,
                 child: ListView.separated(
                     scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) => CustomCategoryHomePage(
+                    itemBuilder: (context, index) =>
+                        CustomCategoryHomePage(
                           title: Constants.categoryList[index].title,
                           image: Constants.categoryList[index].image,
                         ),
-                    separatorBuilder: (context, index) => SizedBox(
+                    separatorBuilder: (context, index) =>
+                        SizedBox(
                           width: WidthValue.w9,
                         ),
                     itemCount: 3)),
@@ -37,7 +39,16 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            const custom_card_Collection(),
+            SizedBox(
+
+             height: 194,
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                  itemBuilder:(context, index) =>  custom_card_Collection(),
+                  separatorBuilder: (context, index) => SizedBox(width: WidthValue.w28_83,),
+                  itemCount: 3),
+            )
+
           ],
         ),
       ),
