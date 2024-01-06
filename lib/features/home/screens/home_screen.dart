@@ -44,11 +44,7 @@ class HomeScreen extends StatelessWidget {
               child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) => custom_card_Collection(
-                        collctionsModel: CollectionsModel(
-                            AssetImageManager.catHomePage1,
-                            "title",
-                            false,
-                            100),
+                        collctionsModel:Constants.collectionList[index],
                       ),
                   separatorBuilder: (context, index) => SizedBox(
                         width: WidthValue.w28_83,
