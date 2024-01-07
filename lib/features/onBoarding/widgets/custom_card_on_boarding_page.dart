@@ -15,12 +15,12 @@ class CustomCardOnBoardingPage extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
       child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: BlurValue.b10, sigmaY: BlurValue.b10),
+        filter: ImageFilter.blur(sigmaX: BlurValues.b10, sigmaY: BlurValues.b10),
         child: Container(
           alignment: Alignment.center,
-          padding: const EdgeInsets.all(PaddingValue.p25),
-          height: HeightValue.h191,
-          width: WidthValue.w306,
+          padding: const EdgeInsets.all(PaddingValues.p25),
+          height: HeightValues.h191,
+          width: WidthValues.w306,
           color: ColorManager.kColorWhite.withOpacity(0.1),
           child: Column(
             children: [
@@ -34,7 +34,7 @@ class CustomCardOnBoardingPage extends StatelessWidget {
                     fontWeight: FontWeight.w900),
               ),
               const SizedBox(
-                height: HeightValue.h6,
+                height: HeightValues.h6,
               ),
               const Text(
                 StringsManager.descCardOnBoardingPage,
@@ -42,24 +42,24 @@ class CustomCardOnBoardingPage extends StatelessWidget {
                 style: TextStyle(color: ColorManager.kColorLightWhite),
               ),
               const SizedBox(
-                height: HeightValue.h10,
+                height: HeightValues.h10,
               ),
               Container(
-                width: WidthValue.w198_2,
+                width: WidthValues.w198_2,
                 decoration: BoxDecoration(
                     // color: Color(0xff97A9F6),
                     gradient: const LinearGradient(
                         colors: [Color(0xff97A9F6), ColorManager.kColorLightWhite]),
                     borderRadius: const BorderRadius.all(
-                        Radius.circular(RadiusValue.r40)),
+                        Radius.circular(RadiusValues.r40)),
                     border: Border.all(
                       color: ColorManager.kColorWhite,
                     )),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(RadiusValue.r40),
+                  borderRadius: BorderRadius.circular(RadiusValues.r40),
                   child: BackdropFilter(
                     filter:
-                        ImageFilter.blur(sigmaX: BlurValue.b100, sigmaY: 30),
+                        ImageFilter.blur(sigmaX: BlurValues.b100, sigmaY: 30),
                     child: MaterialButton(
                       onPressed: () {
                         Navigator.pushReplacementNamed(context, RouteName.kHomePage);

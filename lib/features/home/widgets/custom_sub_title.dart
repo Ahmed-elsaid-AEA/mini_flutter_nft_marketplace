@@ -13,7 +13,7 @@ class CustomSubTitle extends StatelessWidget {
     return Align(
         alignment: AlignmentDirectional.centerStart,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: PaddingValue.p14),
+          padding: const EdgeInsets.symmetric(horizontal: PaddingValues.p14),
           child: Text(
               style: const TextStyle(
                   color: ColorManager.kColorWhite,

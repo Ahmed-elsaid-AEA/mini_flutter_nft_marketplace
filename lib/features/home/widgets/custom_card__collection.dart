@@ -21,22 +21,22 @@ class custom_card_Collection extends StatelessWidget {
         borderRadius: BorderRadius.circular(19),
         child: BackdropFilter(
           filter:
-              ImageFilter.blur(sigmaX: BlurValue.b100, sigmaY: BlurValue.b100),
+              ImageFilter.blur(sigmaX: BlurValues.b100, sigmaY: BlurValues.b100),
           child: Container(
             alignment: Alignment.center,
-            padding: const EdgeInsets.all(PaddingValue.p9),
-            height: HeightValue.h194,
-            width: WidthValue.w157,
+            padding: const EdgeInsets.all(PaddingValues.p9),
+            height: HeightValues.h194,
+            width: WidthValues.w157,
             color: ColorManager.kColorWhite.withOpacity(0.1),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Image(
                   image: AssetImage( collctionsModel.image),
-                  height: HeightValue.h139,
+                  height: HeightValues.h139,
                 ),
                 const SizedBox(
-                  height: HeightValue.h9,
+                  height: HeightValues.h9,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

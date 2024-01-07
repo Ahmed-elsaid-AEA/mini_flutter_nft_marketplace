@@ -20,12 +20,12 @@ final TopSellerModel topSellerModel;
         borderRadius: BorderRadius.circular(19),
         child: BackdropFilter(
           filter: ImageFilter.blur(
-              sigmaX: BlurValue.b100, sigmaY: BlurValue.b100),
+              sigmaX: BlurValues.b100, sigmaY: BlurValues.b100),
           child: Container(
             alignment: Alignment.center,
-            padding: const EdgeInsets.all(PaddingValue.p9),
-            height: HeightValue.h236,
-            width: WidthValue.w157,
+            padding: const EdgeInsets.all(PaddingValues.p9),
+            height: HeightValues.h236,
+            width: WidthValues.w157,
             color: ColorManager.kColorWhite.withOpacity(0.1),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,10 +33,10 @@ final TopSellerModel topSellerModel;
               children: [
                 Image(
                   image: AssetImage(topSellerModel.image),
-                  height: HeightValue.h139,
+                  height: HeightValues.h139,
                 ),
                 const SizedBox(
-                  height: HeightValue.h9,
+                  height: HeightValues.h9,
                 ),
                 Text(
                   topSellerModel.title,
@@ -56,7 +56,7 @@ final TopSellerModel topSellerModel;
                       fontSize: FontSize.f10),
                 ),
                 const SizedBox(
-                  height:HeightValue.h9,
+                  height:HeightValues.h9,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

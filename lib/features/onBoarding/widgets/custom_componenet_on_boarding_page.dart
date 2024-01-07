@@ -17,13 +17,13 @@ class CustomComponentOnBoardingPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            height: HeightValue.h70,
+            height: HeightValues.h70,
           ),
           CustomTitleOnBoardingPage(),
           Spacer(),
           CustomCardOnBoardingPage(),
           SizedBox(
-            height: HeightValue.h70,
+            height: HeightValues.h70,
           ),
         ],
       ),

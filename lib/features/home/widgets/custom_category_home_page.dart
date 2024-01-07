@@ -14,20 +14,20 @@ class CustomCategoryHomePage extends StatelessWidget {
     return  Stack(
       children: [
         ClipRRect(
-          borderRadius: BorderRadius.circular(RadiusValue.r27_03),
+          borderRadius: BorderRadius.circular(RadiusValues.r27_03),
           child:   Image(
             image: AssetImage(image),
-            height: HeightValue.h167_57,
-            width: WidthValue.w252_26,
+            height: HeightValues.h167_57,
+            width: WidthValues.w252_26,
           ),
         ),
-        Positioned(bottom: PositionedValue.po,child: ClipRRect(
+        Positioned(bottom: PositionedValues.po,child: ClipRRect(
           borderRadius: const BorderRadius.only(
-            bottomLeft: Radius.circular(RadiusValue.r27_03),
-            bottomRight: Radius.circular(RadiusValue.r27_03),
+            bottomLeft: Radius.circular(RadiusValues.r27_03),
+            bottomRight: Radius.circular(RadiusValues.r27_03),
           ),
           child: BackdropFilter(
-            filter:ImageFilter.blur(sigmaX: BlurValue.b3,sigmaY: BlurValue.b3) ,
+            filter:ImageFilter.blur(sigmaX: BlurValues.b3,sigmaY: BlurValues.b3) ,
             child: Container(
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
@@ -38,8 +38,8 @@ class CustomCategoryHomePage extends StatelessWidget {
                           ColorManager.kColorBlack.withOpacity(0),
                           ColorManager.kColorBlack.withOpacity(.45),
                         ])),
-                height: HeightValue.h45_06,
-                width: WidthValue.w252_26,
+                height: HeightValues.h45_06,
+                width: WidthValues.w252_26,
                 child: Text(title,style: const TextStyle(fontSize: FontSize.f19_82,fontFamily: FontMangers.sfRroDisplay,fontWeight: FontWeight.bold),)),
           ),
         ),)
