@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/color_manager.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/constants.dart';
@@ -22,36 +23,68 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double widthScreen=MediaQuery.of(context).size.width;
     return Scaffold(
       extendBody: true,
-      bottomNavigationBar: Stack(alignment: Alignment.center,
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(60),
-            child: BackdropFilter(
-              filter: ImageFilter.blur(
-                  sigmaX: BlurValues.b100, sigmaY: BlurValues.b100),
+      bottomNavigationBar: Container(
+
+        height: 122,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Positioned(
+              bottom: 0,
               child: Container(
-                alignment: Alignment.center,
-                padding: const EdgeInsets.all(PaddingValues.p9),
-                height: HeightValues.h90,
-                color: ColorManager.kColorWhite.withOpacity(0.1),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Icon(Icons.home, color: Colors.white, size: SizeValues.s39),
-                    Icon(Icons.stacked_bar_chart, color: Colors.white, size: SizeValues.s39),
-                    Container(width: 39,),
-                    Icon(Icons.search, color: Colors.white, size: SizeValues.s39),
-                    Icon(Icons.person, color: Colors.white, size: SizeValues.s39),
-                  ],
+                width: widthScreen,
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(60),
+                    topRight: Radius.circular(60),
+                  ),
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(
+                        sigmaX: BlurValues.b100, sigmaY: BlurValues.b100),
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: HeightValues.h90,
+                      color: ColorManager.kColorWhite.withOpacity(0.1),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Icon(Icons.home, color: Colors.white, size: SizeValues.s39),
+                          Icon(Icons.stacked_bar_chart,
+                              color: Colors.white, size: SizeValues.s39),
+                          Container(
+                            width: 39,
+                          ),
+                          Icon(Icons.search,
+                              color: Colors.white, size: SizeValues.s39),
+                          Icon(Icons.person,
+                              color: Colors.white, size: SizeValues.s39),
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),
-          ),
-          Container(color: Colors.red,height: 50,width: 20,),
-
-        ],
+            Positioned(
+              top: 0,
+              child: Container(
+                decoration:   ShapeDecoration(
+                  shape: const StarBorder.polygon(
+                    sides: 6,
+                   pointRounding: .5
+                  ),
+                  color: Colors.white.withOpacity(.5),
+                ),
+                height: HeightValues.h70,
+                width: HeightValues.h70,
+                child: const Icon(CupertinoIcons.plus,color: ColorManager.kColorWhite,),
+              ),
+            ),
+          ],
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -115,7 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text(StringsManager.titleHomePage),
         backgroundColor: Colors.transparent,
       ),
-      // backgroundColor: ColorManager.kColorPrimary,
+      backgroundColor: ColorManager.kColorPrimary,
     );
   }
 }
