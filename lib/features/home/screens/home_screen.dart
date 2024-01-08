@@ -1,6 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/color_manager.dart';
+import 'package:mini_flutter_nft_marketplace/core/resourses/font_managers.dart';
+import 'package:mini_flutter_nft_marketplace/core/resourses/size_manager.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/strings_managers.dart';
 import 'package:mini_flutter_nft_marketplace/features/home/screens/home_page.dart';
 import 'package:mini_flutter_nft_marketplace/features/home/widgets/custom_bottom_navigation_bar.dart';
@@ -14,31 +15,33 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-int index=0;
-List <Widget> w=[HomePage(),StatePage()];
+  int index = 0;
+  List<Widget> w = [HomePage(), StatePage()];
+
   @override
   Widget build(BuildContext context) {
-    double widthScreen=MediaQuery.of(context).size.width;
+    double widthScreen = MediaQuery.of(context).size.width;
     return Scaffold(
       extendBody: true,
-      bottomNavigationBar:CustomBottomNavigationBar(
-        onPressedHome: () {
-          index=0;
-          setState(() {
-
-          });
-        },
-        onPressedStats: () {
-          index=1;
-          setState(() {
-
-          });
-        },
+      bottomNavigationBar: CustomBottomNavigationBar(
+          onPressedHome: () {
+            index = 0;
+            setState(() {});
+          },
+          onPressedStats: () {
+            index = 1;
+            setState(() {});
+          },
           widthScreen: widthScreen),
       body: w[index],
-      appBar:   AppBar(
+      appBar: AppBar(
         centerTitle: true,
-        title:   Text(index==0?StringsManager.titleHomePage:StringsManager.stats),
+        title: Text(
+            style: const TextStyle(
+                color: ColorManager.kColorWhite,
+                fontWeight: FontWeight.bold,
+                fontSize: SizeValues.s30),
+            index == 0 ? StringsManager.titleHomePage : StringsManager.stats),
         backgroundColor: Colors.transparent,
       ),
       backgroundColor: ColorManager.kColorPrimary,

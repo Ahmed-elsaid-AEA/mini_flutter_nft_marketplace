@@ -51,5 +51,7 @@ class PositionedValues{
   static const double po = 0;
 }
 class SizeValues{
+  static const double s18 = 18;
+  static const double s30 = 30;
   static const double s39 = 39;
 }
