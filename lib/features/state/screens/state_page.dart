@@ -16,59 +16,64 @@ class StatePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: HeightValues.h27,
-        ),
-        CustomSubTitleStatePage(),
-        SizedBox(
-          height: HeightValues.h27,
-        ),
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            CustomCategoryStatsPage(
-              title: StringsManager.allCategories,
-              iconData: CupertinoIcons.table_badge_more,
-            ),
-            SizedBox(
-              width: WidthValues.w20,
-            ),
-            CustomCategoryStatsPage(
-              title: StringsManager.allChains,
-              iconData: CupertinoIcons.link,
-            ),
-          ],
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: PaddingValues.p9),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: BackdropFilter(
-              filter: ImageFilter.blur(
-                  sigmaX: BlurValues.b10, sigmaY: BlurValues.b10),
-              child: Container(
-                height: 300,
-                alignment: Alignment.center,
-                // padding: const EdgeInsets.all(PaddingValues.p25),
-                child: ListView.separated(
-                    itemBuilder: (context, index) =>
-                        CustomTableRowStatsPage(order: 1,
-                            image: AssetImageManager.catHomePage1,
-                            name: "name",
-                            subName: "subName",
-                            count: "count",
-                            present: "present"),
+    double listHeight=MediaQuery.of(context).size.height-250;
 
-                    separatorBuilder:(context, index) => SizedBox(height: HeightValues.h9,) ,
-                    itemCount:10),
-                color: ColorManager.kColorWhite.withOpacity(0.1),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          SizedBox(
+            height: HeightValues.h27,
+          ),
+          CustomSubTitleStatePage(),
+          SizedBox(
+            height: HeightValues.h27,
+          ),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              CustomCategoryStatsPage(
+                title: StringsManager.allCategories,
+                iconData: CupertinoIcons.table_badge_more,
+              ),
+              SizedBox(
+                width: WidthValues.w20,
+              ),
+              CustomCategoryStatsPage(
+                title: StringsManager.allChains,
+                iconData: CupertinoIcons.link,
+              ),
+            ],
+          ),
+          SizedBox(height: 20,),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: PaddingValues.p9),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: BackdropFilter(
+                filter: ImageFilter.blur(
+                    sigmaX: BlurValues.b10, sigmaY: BlurValues.b10),
+                child: Container(
+                  color: ColorManager.kColorWhite.withOpacity(0.1),
+
+                  child: ListView.separated(
+                    physics: NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                      itemBuilder: (context, index) =>
+                          CustomTableRowStatsPage(order: 1,
+                              image: AssetImageManager.catHomePage1,
+                              name: "name",
+                              subName: "subName",
+                              count: "count",
+                              present: "present"),
+
+                      separatorBuilder:(context, index) => SizedBox(height: HeightValues.h9,) ,
+                      itemCount:10),
+                ),
               ),
             ),
-          ),
-        )
-      ],
+          )
+        ],
+      ),
     );
   }
 }
