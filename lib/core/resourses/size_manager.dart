@@ -15,6 +15,7 @@ class HeightValues {
 }
 
 class WidthValues {
+  static const double w0_2 = 0.2;
   static const double w0_7 = 0.7;
   static const double w6 = 6;
   static const double w9 = 9;
