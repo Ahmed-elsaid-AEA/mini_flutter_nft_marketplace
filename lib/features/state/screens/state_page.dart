@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/asset_mage_manager.dart';
@@ -39,50 +41,33 @@ class StatePage extends StatelessWidget {
             ),
           ],
         ),
-        CustomTableRowStatsPage(
-            order:1,
-            image: AssetImageManager.catHomePage1,
-            name: "name",
-            subName: "subName",
-            count: "20",
-            present: "20"),
-        CustomTableRowStatsPage(
-            order:1,
-            image: AssetImageManager.catHomePage1,
-            name: "name",
-            subName: "subName",
-            count: "20",
-            present: "20"),CustomTableRowStatsPage(
-            order:1,
-            image: AssetImageManager.catHomePage1,
-            name: "name",
-            subName: "subName",
-            count: "20",
-            present: "20"),CustomTableRowStatsPage(
-            order:1,
-            image: AssetImageManager.catHomePage1,
-            name: "name",
-            subName: "subName",
-            count: "20",
-            present: "20"),CustomTableRowStatsPage(
-            order:1,
-            image: AssetImageManager.catHomePage1,
-            name: "name",
-            subName: "subName",
-            count: "20",
-            present: "20"),CustomTableRowStatsPage(
-            order:1,
-            image: AssetImageManager.catHomePage1,
-            name: "name",
-            subName: "subName",
-            count: "20",
-            present: "20"),CustomTableRowStatsPage(
-            order:1,
-            image: AssetImageManager.catHomePage1,
-            name: "name",
-            subName: "subName",
-            count: "20",
-            present: "20"),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: PaddingValues.p9),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: BackdropFilter(
+              filter: ImageFilter.blur(
+                  sigmaX: BlurValues.b10, sigmaY: BlurValues.b10),
+              child: Container(
+                height: 300,
+                alignment: Alignment.center,
+                // padding: const EdgeInsets.all(PaddingValues.p25),
+                child: ListView.separated(
+                    itemBuilder: (context, index) =>
+                        CustomTableRowStatsPage(order: 1,
+                            image: AssetImageManager.catHomePage1,
+                            name: "name",
+                            subName: "subName",
+                            count: "count",
+                            present: "present"),
+
+                    separatorBuilder:(context, index) => SizedBox(height: HeightValues.h9,) ,
+                    itemCount:10),
+                color: ColorManager.kColorWhite.withOpacity(0.1),
+              ),
+            ),
+          ),
+        )
       ],
     );
   }

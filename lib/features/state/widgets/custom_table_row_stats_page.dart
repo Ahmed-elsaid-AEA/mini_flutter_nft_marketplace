@@ -14,74 +14,77 @@ final String count;
 final String present;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(9),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text('$order'),
-          const   SizedBox(width: WidthValues.w10,),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(RadiusValues.r9),
-            child: Image(
-              fit: BoxFit.cover,
-              image: AssetImage(
-                image,
+    return Container(
+      child: Padding(
+        padding: const EdgeInsets.all(14),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text('$order'),
+            const   SizedBox(width: WidthValues.w10,),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(RadiusValues.r9),
+              child: Image(
+                fit: BoxFit.cover,
+                image: AssetImage(
+                  image,
+                ),
+                width: WidthValues.w39,
+                height: HeightValues.h39,
               ),
-              width: WidthValues.w39,
-              height: HeightValues.h39,
             ),
-          ),
-          const  SizedBox(width: WidthValues.w13,),
+            const  SizedBox(width: WidthValues.w13,),
 
-          Container(
-            width: 115,
-            height: HeightValues.h39,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  name,
-                  style: const TextStyle(
-                      color: ColorManager.kColorWhite,
-                      fontWeight: FontWeight.bold,
-                      fontSize: FontSize.f15,
-                      fontFamily: FontMangers.sfRroDisplay),
-                ),
-                Text(
-                  subName,
-                  style: const TextStyle(
-                      fontSize: FontSize.f11, fontFamily: FontMangers.sfRroDisplay),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(width: WidthValues.w28_83,),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Row(
+            Container(
+              width: 115,
+              height: HeightValues.h39,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Icon(
-                    CupertinoIcons.link,
-                    size: 15,
+                  Text(
+                    name,
+                    style: const TextStyle(
+                        color: ColorManager.kColorWhite,
+                        fontWeight: FontWeight.bold,
+                        fontSize: FontSize.f15,
+                        fontFamily: FontMangers.sfRroDisplay),
                   ),
                   Text(
-                    count,
-                    style: TextStyle(
-                        color: ColorManager.kColorWhite,
-                        fontSize: FontSize.f13,
-                        fontWeight: FontWeight.bold),
+                    subName,
+                    style: const TextStyle(
+                        fontSize: FontSize.f11, fontFamily: FontMangers.sfRroDisplay),
                   ),
                 ],
               ),
-              Text(present,style: TextStyle(
-                  color:Colors.green,
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold),)
-            ],
-          )
-        ],
+            ),
+            SizedBox(width: WidthValues.w28_83,),
+            Spacer(),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Row(
+                  children: [
+                    Icon(
+                      CupertinoIcons.link,
+                      size: 15,
+                    ),
+                    Text(
+                      count,
+                      style: TextStyle(
+                          color: ColorManager.kColorWhite,
+                          fontSize: FontSize.f13,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+                Text(present,style: TextStyle(
+                    color:Colors.green,
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold),)
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
