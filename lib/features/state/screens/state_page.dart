@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mini_flutter_nft_marketplace/core/resourses/asset_mage_manager.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/color_manager.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/font_managers.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/size_manager.dart';
@@ -36,6 +37,71 @@ class StatePage extends StatelessWidget {
               iconData: CupertinoIcons.link,
             ),
           ],
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              Text("1"),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(RadiusValues.r9),
+                child: Image(
+                  fit: BoxFit.cover,
+                  image: AssetImage(
+                    AssetImageManager.catHomePage1,
+                  ),
+                  width: WidthValues.w39,
+                  height: HeightValues.h39,
+                ),
+              ),
+              Container(
+                width: 115,
+                height: HeightValues.h39,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Azumi",
+                      style: TextStyle(
+                          color: ColorManager.kColorWhite,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                          fontFamily: FontMangers.sfRroDisplay),
+                    ),
+                    Text(
+                      "Azumi sd",
+                      style: TextStyle(
+                          fontSize: 11, fontFamily: FontMangers.sfRroDisplay),
+                    ),
+                  ],
+                ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Row(
+                    children: [
+                      Icon(
+                        CupertinoIcons.link,
+                        size: 15,
+                      ),
+                      Text(
+                        "200055.02",
+                        style: TextStyle(
+                            color: ColorManager.kColorWhite,
+                            fontSize: 13,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                  Text("3,99%",style: TextStyle(
+              color:Colors.green,
+              fontSize: 12,
+              fontWeight: FontWeight.bold),)
+                ],
+              )
+            ],
+          ),
         )
       ],
     );

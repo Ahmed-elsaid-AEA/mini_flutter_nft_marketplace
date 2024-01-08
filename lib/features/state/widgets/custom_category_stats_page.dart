@@ -4,22 +4,25 @@ import 'package:mini_flutter_nft_marketplace/core/resourses/font_managers.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/size_manager.dart';
 
 class CustomCategoryStatsPage extends StatelessWidget {
-  const CustomCategoryStatsPage({super.key, required this.title, required this.iconData});
-final String title;
-final IconData iconData;
+  const CustomCategoryStatsPage(
+      {super.key, required this.title, required this.iconData});
+
+  final String title;
+  final IconData iconData;
+
   @override
   Widget build(BuildContext context) {
-    return  Container(
-
+    return Container(
+      padding:
+          const EdgeInsets.symmetric(vertical: PaddingValues.p10,
+              horizontal: PaddingValues.p25),
       alignment: Alignment.center,
-      height: 39,
-      width: 147,
       decoration: BoxDecoration(
         color: ColorManager.kColorDarkBanafseg.withOpacity(.12),
         border: Border.all(
           color: ColorManager.kColorPanafseg,
         ),
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(50),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -28,7 +31,9 @@ final IconData iconData;
             iconData,
             color: ColorManager.kColorGrey,
           ),
-          const SizedBox(width: WidthValues.w2,),
+          const SizedBox(
+            width: WidthValues.w2,
+          ),
           Text(
             title,
             style: const TextStyle(
