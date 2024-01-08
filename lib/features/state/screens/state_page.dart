@@ -7,6 +7,7 @@ import 'package:mini_flutter_nft_marketplace/core/resourses/size_manager.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/strings_managers.dart';
 import 'package:mini_flutter_nft_marketplace/features/state/widgets/custom_category_stats_page.dart';
 import 'package:mini_flutter_nft_marketplace/features/state/widgets/custom_sub_title_state_page.dart';
+import 'package:mini_flutter_nft_marketplace/features/state/widgets/custom_table_row_stats_page.dart';
 
 class StatePage extends StatelessWidget {
   const StatePage({super.key});
@@ -38,71 +39,50 @@ class StatePage extends StatelessWidget {
             ),
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            children: [
-              Text("1"),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(RadiusValues.r9),
-                child: Image(
-                  fit: BoxFit.cover,
-                  image: AssetImage(
-                    AssetImageManager.catHomePage1,
-                  ),
-                  width: WidthValues.w39,
-                  height: HeightValues.h39,
-                ),
-              ),
-              Container(
-                width: 115,
-                height: HeightValues.h39,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Azumi",
-                      style: TextStyle(
-                          color: ColorManager.kColorWhite,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15,
-                          fontFamily: FontMangers.sfRroDisplay),
-                    ),
-                    Text(
-                      "Azumi sd",
-                      style: TextStyle(
-                          fontSize: 11, fontFamily: FontMangers.sfRroDisplay),
-                    ),
-                  ],
-                ),
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Row(
-                    children: [
-                      Icon(
-                        CupertinoIcons.link,
-                        size: 15,
-                      ),
-                      Text(
-                        "200055.02",
-                        style: TextStyle(
-                            color: ColorManager.kColorWhite,
-                            fontSize: 13,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
-                  Text("3,99%",style: TextStyle(
-              color:Colors.green,
-              fontSize: 12,
-              fontWeight: FontWeight.bold),)
-                ],
-              )
-            ],
-          ),
-        )
+        CustomTableRowStatsPage(
+            order:1,
+            image: AssetImageManager.catHomePage1,
+            name: "name",
+            subName: "subName",
+            count: "20",
+            present: "20"),
+        CustomTableRowStatsPage(
+            order:1,
+            image: AssetImageManager.catHomePage1,
+            name: "name",
+            subName: "subName",
+            count: "20",
+            present: "20"),CustomTableRowStatsPage(
+            order:1,
+            image: AssetImageManager.catHomePage1,
+            name: "name",
+            subName: "subName",
+            count: "20",
+            present: "20"),CustomTableRowStatsPage(
+            order:1,
+            image: AssetImageManager.catHomePage1,
+            name: "name",
+            subName: "subName",
+            count: "20",
+            present: "20"),CustomTableRowStatsPage(
+            order:1,
+            image: AssetImageManager.catHomePage1,
+            name: "name",
+            subName: "subName",
+            count: "20",
+            present: "20"),CustomTableRowStatsPage(
+            order:1,
+            image: AssetImageManager.catHomePage1,
+            name: "name",
+            subName: "subName",
+            count: "20",
+            present: "20"),CustomTableRowStatsPage(
+            order:1,
+            image: AssetImageManager.catHomePage1,
+            name: "name",
+            subName: "subName",
+            count: "20",
+            present: "20"),
       ],
     );
   }

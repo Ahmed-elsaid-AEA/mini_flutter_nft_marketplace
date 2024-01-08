@@ -23,6 +23,7 @@ class WidthValues {
   static const double w6 = 6;
   static const double w9 = 9;
   static const double w10 = 10;
+  static const double w13 = 13;
   static const double w20 = 20;
   static const double w28_83 = 28.83;
   static const double w39 = 39;
