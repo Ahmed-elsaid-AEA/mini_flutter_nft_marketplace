@@ -10,4 +10,6 @@ NFT Marketplace''';
   static const String stats="Stats";
   static const String ranking="Ranking";
   static const String activity="Activity";
+  static const String allChains="All Chains";
+  static const String allCategories="All categories";
 }
