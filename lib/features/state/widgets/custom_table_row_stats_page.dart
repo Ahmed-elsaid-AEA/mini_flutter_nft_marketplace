@@ -3,15 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/color_manager.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/font_managers.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/size_manager.dart';
+import 'package:mini_flutter_nft_marketplace/models/table_row_Model.dart';
 
 class CustomTableRowStatsPage extends StatelessWidget {
-  const CustomTableRowStatsPage({super.key, required this.order, required this.image, required this.name, required this.subName, required this.count, required this.present});
-final int order;
-final String image;
-final String name;
-final String subName;
-final String count;
-final String present;
+  const CustomTableRowStatsPage({super.key,
+  required this.tableRowModel,});
+ final TableRowModel tableRowModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,14 +17,14 @@ final String present;
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text('$order'),
+            Text('${tableRowModel.order}'),
             const   SizedBox(width: WidthValues.w10,),
             ClipRRect(
               borderRadius: BorderRadius.circular(RadiusValues.r9),
               child: Image(
                 fit: BoxFit.cover,
                 image: AssetImage(
-                  image,
+                  tableRowModel.image,
                 ),
                 width: WidthValues.w39,
                 height: HeightValues.h39,
@@ -42,7 +39,7 @@ final String present;
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    name,
+                    tableRowModel.name,
                     style: const TextStyle(
                         color: ColorManager.kColorWhite,
                         fontWeight: FontWeight.bold,
@@ -50,7 +47,7 @@ final String present;
                         fontFamily: FontMangers.sfRroDisplay),
                   ),
                   Text(
-                    subName,
+                    tableRowModel.subName,
                     style: const TextStyle(
                         fontSize: FontSize.f11, fontFamily: FontMangers.sfRroDisplay),
                   ),
@@ -59,26 +56,24 @@ final String present;
             ),
             SizedBox(width: WidthValues.w28_83,),
             Spacer(),
+            Icon(
+              CupertinoIcons.link,
+              size: 15,
+            ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Row(
-                  children: [
-                    Icon(
-                      CupertinoIcons.link,
-                      size: 15,
-                    ),
+
                     Text(
-                      count,
+                      tableRowModel.count,
                       style: TextStyle(
                           color: ColorManager.kColorWhite,
                           fontSize: FontSize.f13,
                           fontWeight: FontWeight.bold),
                     ),
-                  ],
-                ),
-                Text(present,style: TextStyle(
-                    color:Colors.green,
+
+                Text(tableRowModel.present,style: TextStyle(
+                    color:tableRowModel.active?Colors.green:ColorManager.kColorRed,
                     fontSize: 12,
                     fontWeight: FontWeight.bold),)
               ],
