@@ -36,9 +36,9 @@ List <Widget> w=[HomePage(),StatePage()];
         },
           widthScreen: widthScreen),
       body: w[index],
-      appBar: AppBar(
+      appBar:   AppBar(
         centerTitle: true,
-        title: const Text(StringsManager.titleHomePage),
+        title:   Text(index==0?StringsManager.titleHomePage:StringsManager.stats),
         backgroundColor: Colors.transparent,
       ),
       backgroundColor: ColorManager.kColorPrimary,

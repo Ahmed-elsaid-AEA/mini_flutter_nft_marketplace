@@ -7,4 +7,5 @@ NFT Marketplace''';
   static const String titleHomePage="NFT Marketplace";
   static const String trendingCollectionHomePage="Trending collections";
   static const String topSeller="Top seller";
+  static const String stats="Stats";
 }
