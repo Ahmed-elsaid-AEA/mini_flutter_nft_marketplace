@@ -12,4 +12,5 @@ class ColorManager{
   static const Color kColorBlack=  Color(0xff000000);
   static const Color kColorRed=  Colors.red;
   static const Color kColorGrey=  Colors.grey;
+  static const Color kColorDarkBanafseg=  Color(0xff976dff);
 }

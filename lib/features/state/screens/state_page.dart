@@ -48,7 +48,17 @@ class StatePage extends StatelessWidget {
                       height: 20,
                     ),
                     Container(
-                      color: Color(0xff976dff),
+                      decoration: BoxDecoration(
+                          color: ColorManager.kColorDarkBanafseg,
+                          boxShadow: [
+                            BoxShadow(
+                              offset: Offset(0, -5),
+                              color: ColorManager.kColorDarkBanafseg,
+                              blurRadius: 16,
+
+                              spreadRadius: 1
+                            )
+                          ]),
                       width: WidthValues.w106,
                       height: 3.6,
                     )
