@@ -2,13 +2,12 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mini_flutter_nft_marketplace/core/resourses/asset_mage_manager.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/color_manager.dart';
 import 'package:mini_flutter_nft_marketplace/core/resourses/size_manager.dart';
 import 'package:mini_flutter_nft_marketplace/models/collections_model.dart';
 
-class custom_card_Collection extends StatelessWidget {
-  const custom_card_Collection({
+class CustomCardCollection extends StatelessWidget {
+  const CustomCardCollection({
     super.key, required this.collctionsModel,
   });
   final CollectionsModel collctionsModel;
@@ -31,10 +30,13 @@ class custom_card_Collection extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Image(
+            ClipRRect(
+            borderRadius: BorderRadius.circular(19),
+            child: Image(
+fit: BoxFit.cover,
                   image: AssetImage( collctionsModel.image),
                   height: HeightValues.h139,
-                ),
+                ),),
                 const SizedBox(
                   height: HeightValues.h9,
                 ),

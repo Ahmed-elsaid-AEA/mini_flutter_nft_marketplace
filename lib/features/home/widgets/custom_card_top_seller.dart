@@ -31,9 +31,13 @@ final TopSellerModel topSellerModel;
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Image(
-                  image: AssetImage(topSellerModel.image),
-                  height: HeightValues.h139,
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(19),
+                  child: Image(
+                    fit: BoxFit.cover,
+                    image: AssetImage(topSellerModel.image),
+                    height: HeightValues.h139,
+                  ),
                 ),
                 const SizedBox(
                   height: HeightValues.h9,
