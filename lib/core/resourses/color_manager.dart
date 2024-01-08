@@ -10,4 +10,5 @@ class ColorManager{
   static const Color kColorPrimary= Color(0xff211134);
   static const Color kColorBlack=  Color(0xff000000);
   static const Color kColorRed=  Colors.red;
+  static const Color kColorGrey=  Colors.grey;
 }
