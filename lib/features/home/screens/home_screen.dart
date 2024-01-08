@@ -34,16 +34,24 @@ class _HomeScreenState extends State<HomeScreen> {
           },
           widthScreen: widthScreen),
       body: w[index],
-      appBar: AppBar(
+      appBar:index==0? AppBar(
         centerTitle: true,
         title: Text(
-            style: const TextStyle(
-                color: ColorManager.kColorWhite,
-                fontWeight: FontWeight.bold,
-                fontSize: SizeValues.s30),
-            index == 0 ? StringsManager.titleHomePage : StringsManager.stats),
+              StringsManager.titleHomePage),
         backgroundColor: Colors.transparent,
-      ),
+      )
+          :index==1?AppBar(
+        actions: const [
+          Padding(
+            padding: EdgeInsets.only(right:PaddingValues.p14),
+            child: Icon(Icons.more_horiz),
+          )
+        ],
+        centerTitle: true,
+        title: const Text(
+            StringsManager.stats),
+        backgroundColor: Colors.transparent,
+      ):AppBar(title:const Text("null") ,),
       backgroundColor: ColorManager.kColorPrimary,
     );
   }
