@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mini_flutter_nft_marketplace/core/resourses/color_manager.dart';
+import 'package:mini_flutter_nft_marketplace/core/resourses/font_managers.dart';
+import 'package:mini_flutter_nft_marketplace/core/resourses/size_manager.dart';
+import 'package:mini_flutter_nft_marketplace/features/state/widgets/custom_category_stats_page.dart';
 import 'package:mini_flutter_nft_marketplace/features/state/widgets/custom_sub_title_state_page.dart';
 
 class StatePage extends StatelessWidget {
@@ -8,7 +12,18 @@ class StatePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-CustomSubTitleStatePage()
+        SizedBox(
+          height: HeightValues.h27,
+        ),
+        CustomSubTitleStatePage(),
+        SizedBox(
+          height: HeightValues.h27,
+        ),
+       Row(
+         children: [
+           CustomCategoryStatsPage(),
+         ],
+       )
       ],
     );
   }
